@@ -17,6 +17,7 @@
 //   the first element is the string, the second one is the command.
 // - The output element is going to be a vector of strings.
 
+#[allow(dead_code)]
 enum Command {
     Uppercase,
     Trim,
@@ -27,6 +28,7 @@ mod my_module {
     use super::Command;
 
     // TODO: Complete the function.
+    #[allow(dead_code)]
     pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
         let mut output = Vec::new();
         for (i, c) in input {

@@ -1,6 +1,7 @@
 // Structs contain data, but can also have logic. In this exercise, we have
 // defined the `Package` struct, and we want to test some logic attached to it.
 
+#[allow(dead_code)]
 #[derive(Debug)]
 struct Package {
     sender_country: String,
@@ -8,6 +9,7 @@ struct Package {
     weight_in_grams: u32,
 }
 
+#[allow(dead_code)]
 impl Package {
     fn new(sender_country: String, recipient_country: String, weight_in_grams: u32) -> Self {
         if weight_in_grams < 10 {

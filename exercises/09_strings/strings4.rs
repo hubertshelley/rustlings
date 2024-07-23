@@ -1,4 +1,5 @@
 // Calls of this function should be replaced with calls of `string_slice` or `string`.
+#[allow(dead_code)]
 fn placeholder() {}
 
 fn string_slice(arg: &str) {

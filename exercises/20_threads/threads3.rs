@@ -1,11 +1,13 @@
 use std::{sync::mpsc, thread, time::Duration};
 
+#[allow(dead_code)]
 struct Queue {
     length: u32,
     first_half: Vec<u32>,
     second_half: Vec<u32>,
 }
 
+#[allow(dead_code)]
 impl Queue {
     fn new() -> Self {
         Self {
@@ -16,13 +18,15 @@ impl Queue {
     }
 }
 
+#[allow(dead_code)]
 fn send_tx(q: Queue, tx: mpsc::Sender<u32>) {
     // TODO: We want to send `tx` to both threads. But currently, it is moved
     // into the first thread. How could you solve this problem?
+    let tx1 = tx.clone();
     thread::spawn(move || {
         for val in q.first_half {
             println!("Sending {val:?}");
-            tx.send(val).unwrap();
+            tx1.send(val).unwrap();
             thread::sleep(Duration::from_millis(250));
         }
     });

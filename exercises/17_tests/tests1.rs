@@ -1,6 +1,7 @@
 // Tests are important to ensure that your code does what you think it should
 // do.
 
+#[allow(dead_code)]
 fn is_even(n: i64) -> bool {
     n % 2 == 0
 }

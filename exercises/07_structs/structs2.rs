@@ -1,4 +1,5 @@
 #[derive(Debug)]
+#[allow(dead_code)]
 struct Order {
     name: String,
     year: u32,
@@ -9,6 +10,7 @@ struct Order {
     count: u32,
 }
 
+#[allow(dead_code)]
 fn create_order_template() -> Order {
     Order {
         name: String::from("Bob"),

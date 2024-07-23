@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 fn vec_loop(input: &[i32]) -> Vec<i32> {
     let mut output = Vec::new();
 
@@ -8,6 +9,7 @@ fn vec_loop(input: &[i32]) -> Vec<i32> {
     output
 }
 
+#[allow(dead_code)]
 fn vec_map_example(input: &[i32]) -> Vec<i32> {
     // An example of collecting a vector after mapping.
     // We map each element of the `input` slice to its value plus 1.
@@ -15,6 +17,7 @@ fn vec_map_example(input: &[i32]) -> Vec<i32> {
     input.iter().map(|element| element + 1).collect()
 }
 
+#[allow(dead_code)]
 fn vec_map(input: &[i32]) -> Vec<i32> {
     // TODO: Here, we also want to multiply each element in the `input` slice
     // by 2, but with iterator mapping instead of manually pushing into an empty

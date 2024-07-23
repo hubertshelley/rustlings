@@ -1,8 +1,10 @@
+#[allow(dead_code)]
 struct Point {
     x: u64,
     y: u64,
 }
 
+#[allow(dead_code)]
 enum Message {
     // TODO: Implement the message variant types based on their usage below.
     Resize { width: u64, height: u64 },
@@ -12,6 +14,7 @@ enum Message {
     Quit,
 }
 
+#[allow(dead_code)]
 struct State {
     width: u64,
     height: u64,
@@ -22,6 +25,7 @@ struct State {
     quit: bool,
 }
 
+#[allow(dead_code)]
 impl State {
     fn resize(&mut self, width: u64, height: u64) {
         self.width = width;

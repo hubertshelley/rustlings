@@ -10,11 +10,13 @@ use std::collections::HashMap;
 
 // A structure to store the goal details of a team.
 #[derive(Default)]
+#[allow(dead_code)]
 struct Team {
     goals_scored: u8,
     goals_conceded: u8,
 }
 
+#[allow(dead_code)]
 fn build_scores_table(results: &str) -> HashMap<&str, Team> {
     // The name of the team is the key and its associated struct is the value.
     let mut scores = HashMap::new();
@@ -31,27 +33,22 @@ fn build_scores_table(results: &str) -> HashMap<&str, Team> {
         // Keep in mind that goals scored by team 1 will be the number of goals
         // conceded by team 2. Similarly, goals scored by team 2 will be the
         // number of goals conceded by team 1.
-        if !scores.contains_key(&team_1_name) {
-            scores.insert(
-                team_1_name.clone(),
-                Team {
-                    goals_scored: team_1_score,
-                    goals_conceded: team_2_score,
-                },
-            );
+        if let std::collections::hash_map::Entry::Vacant(e) = scores.entry(team_1_name) {
+            e.insert(Team {
+                goals_scored: team_1_score,
+                goals_conceded: team_2_score,
+            });
         } else {
             let team = scores.get_mut(&team_1_name).unwrap();
             team.goals_scored += team_1_score;
             team.goals_conceded += team_2_score;
         }
-        if !scores.contains_key(&team_2_name) {
-            scores.insert(
-                team_2_name.clone(),
-                Team {
-                    goals_scored: team_2_score,
-                    goals_conceded: team_1_score,
-                },
-            );
+
+        if let std::collections::hash_map::Entry::Vacant(e) = scores.entry(team_2_name) {
+            e.insert(Team {
+                goals_scored: team_2_score,
+                goals_conceded: team_1_score,
+            });
         } else {
             let team = scores.get_mut(&team_2_name).unwrap();
             team.goals_scored += team_2_score;

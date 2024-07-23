@@ -1,14 +1,17 @@
 #![allow(clippy::comparison_chain)]
 
+#[allow(dead_code)]
 #[derive(PartialEq, Debug)]
 enum CreationError {
     Negative,
     Zero,
 }
 
+#[allow(dead_code)]
 #[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
 
+#[allow(dead_code)]
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<Self, CreationError> {
         // TODO: This function shouldn't always return an `Ok`.

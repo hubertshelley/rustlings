@@ -1,8 +1,10 @@
+#[allow(dead_code)]
 struct Rectangle {
     width: i32,
     height: i32,
 }
 
+#[allow(dead_code)]
 impl Rectangle {
     // Don't change this function.
     fn new(width: i32, height: i32) -> Self {
