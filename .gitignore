@@ -3,3 +3,4 @@ solutions
 Cargo.lock
 target
 .vscode
+.idea
